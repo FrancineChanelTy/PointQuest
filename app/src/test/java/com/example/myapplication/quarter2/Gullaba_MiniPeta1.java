@@ -7,9 +7,9 @@ public class Gullaba_MiniPeta1{
     public void printMyProfile() {
 
         String myName = "Gullaba";
-        String petName = "  Baxter";
+        String petName = "Baxter";
         String favFood = "Bicol Express";
-        int myAge = 15;
+        int myAge = 16;
 
         System.out.println("---MY DIGITAL PROFILE---");
         System.out.println("Hello, my name is " + myName + " and I am " + myAge + " years old.");

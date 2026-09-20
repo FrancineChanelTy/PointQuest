@@ -1,0 +1,236 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 33554432 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3686), pid=9656, tid=2684
+#
+# JRE version:  (21.0.7+6) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.7+6-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.awt.headless=true -Djava.library.path=C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\acer\AppData\Local\Microsoft\WindowsApps;C:\Users\acer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\acer\AppData\Local\Kingsoft\WPS Office\12.1.0.27458\clitool;.;C:\Users\acer\StudioProjects\PointQuest\app\src\testDebug\jniLibs;C:\Users\acer\StudioProjects\PointQuest\app\src\test\jniLibs -Dorg.gradle.internal.worker.tmpdir=C:\Users\acer\StudioProjects\PointQuest\app\build\tmp\testDebugUnitTest\work --add-opens=java.base/java.io=ALL-UNNAMED -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=PH -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+
+Host: Intel(R) Celeron(R) CPU  N2940  @ 1.83GHz, 4 cores, 1G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Sun Sep 20 18:47:44 2026 Malay Peninsula Standard Time elapsed time: 0.098475 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002270edcb940):  JavaThread "Unknown thread" [_thread_in_vm, id=2684, stack(0x0000007529f00000,0x000000752a000000) (1024K)]
+
+Stack: [0x0000007529f00000,0x000000752a000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ce119]
+V  [jvm.dll+0x8a84a1]
+V  [jvm.dll+0x8aa9ce]
+V  [jvm.dll+0x8ab0b3]
+V  [jvm.dll+0x27f8a6]
+V  [jvm.dll+0x6ca945]
+V  [jvm.dll+0x6bebea]
+V  [jvm.dll+0x355eca]
+V  [jvm.dll+0x35da96]
+V  [jvm.dll+0x3af72e]
+V  [jvm.dll+0x3af9d8]
+V  [jvm.dll+0x32a05c]
+V  [jvm.dll+0x32abbb]
+V  [jvm.dll+0x871719]
+V  [jvm.dll+0x3bc501]
+V  [jvm.dll+0x85a743]
+V  [jvm.dll+0x45080e]
+V  [jvm.dll+0x452451]
+C  [jli.dll+0x5278]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff97796a0c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000022710ed0a60 WorkerThread "GC Thread#0"                     [id=7448, stack(0x000000752a000000,0x000000752a100000) (1024K)]
+  0x0000022710ed5b00 ConcurrentGCThread "G1 Main Marker"            [id=8788, stack(0x000000752a100000,0x000000752a200000) (1024K)]
+  0x0000022710ed6cb0 WorkerThread "G1 Conc#0"                       [id=12376, stack(0x000000752a200000,0x000000752a300000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff97706c987]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff9779de408] Heap_lock - owner thread: 0x000002270edcb940
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff977457949]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.058 Loaded shared library C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7cf4e0000 - 0x00007ff7cf4ee000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\java.exe
+0x00007ffa1e450000 - 0x00007ffa1e648000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffa1ccf0000 - 0x00007ffa1cdb2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffa1bae0000 - 0x00007ffa1bdd6000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffa1bde0000 - 0x00007ffa1bee0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffa08ce0000 - 0x00007ffa08cfe000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\VCRUNTIME140.dll
+0x00007ffa08d00000 - 0x00007ffa08d18000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\jli.dll
+0x00007ffa1c470000 - 0x00007ffa1c611000 	C:\Windows\System32\USER32.dll
+0x00007ffa1c3c0000 - 0x00007ffa1c3e2000 	C:\Windows\System32\win32u.dll
+0x00007ffa0e7e0000 - 0x00007ffa0ea7b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256\COMCTL32.dll
+0x00007ffa1ccc0000 - 0x00007ffa1cceb000 	C:\Windows\System32\GDI32.dll
+0x00007ffa1c170000 - 0x00007ffa1c289000 	C:\Windows\System32\gdi32full.dll
+0x00007ffa1c910000 - 0x00007ffa1c9ae000 	C:\Windows\System32\msvcrt.dll
+0x00007ffa1bee0000 - 0x00007ffa1bf7d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffa1cc90000 - 0x00007ffa1ccbf000 	C:\Windows\System32\IMM32.DLL
+0x00007ffa18b70000 - 0x00007ffa18b7c000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\vcruntime140_1.dll
+0x00007ff9ff7e0000 - 0x00007ff9ff86d000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\msvcp140.dll
+0x00007ff976d30000 - 0x00007ff977ac0000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\server\jvm.dll
+0x00007ffa1cf70000 - 0x00007ffa1d021000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffa1cdd0000 - 0x00007ffa1ce6f000 	C:\Windows\System32\sechost.dll
+0x00007ffa1d1d0000 - 0x00007ffa1d2f0000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffa1c440000 - 0x00007ffa1c467000 	C:\Windows\System32\bcrypt.dll
+0x00007ffa1ce70000 - 0x00007ffa1cedb000 	C:\Windows\System32\WS2_32.dll
+0x00007ffa1b940000 - 0x00007ffa1b98b000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffa16200000 - 0x00007ffa16227000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffa0c150000 - 0x00007ffa0c15a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffa1b920000 - 0x00007ffa1b932000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffa19950000 - 0x00007ffa19962000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffa14970000 - 0x00007ffa1497a000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\jimage.dll
+0x00007ffa14e40000 - 0x00007ffa15041000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffa14ca0000 - 0x00007ffa14cd4000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffa1c0e0000 - 0x00007ffa1c162000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffa08cc0000 - 0x00007ffa08cdf000 	C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256;C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\server
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Djava.library.path=C:\Users\acer\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\acer\AppData\Local\Microsoft\WindowsApps;C:\Users\acer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\acer\AppData\Local\Kingsoft\WPS Office\12.1.0.27458\clitool;.;C:\Users\acer\StudioProjects\PointQuest\app\src\testDebug\jniLibs;C:\Users\acer\StudioProjects\PointQuest\app\src\test\jniLibs -Dorg.gradle.internal.worker.tmpdir=C:\Users\acer\StudioProjects\PointQuest\app\build\tmp\testDebugUnitTest\work --add-opens=java.base/java.io=ALL-UNNAMED -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=PH -Duser.language=en -Duser.variant -ea 
+java_command: worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+java_class_path (initial): C:\\Users\\acer\\.gradle\\caches\\9.5.0\\workerMain\\gradle-worker.jar;C:\\Users\\acer\\StudioProjects\\PointQuest\\app\\build\\intermediates\\javac\\debugUnitTest\\compileDebugUnitTestJavaWithJavac\\classes;C:\\Users\\acer\\StudioProjects\\PointQuest\\app\\build\\intermediates\\runtime_app_classes_jar\\debug\\bundleDebugClassesToRuntimeJar\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\junit\\junit\\4.13.2\\8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12\\junit-4.13.2.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\85fc0a857a9fcb4c5ff71b316fb30793\\transformed\\material-1.14.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\0b1130f2dcee3153f359d8bc6e2f4a34\\transformed\\appcompat-resources-1.8.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\5d34717af7ae3b6032e7998262fcca03\\transformed\\constraintlayout-2.2.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\3d22ad79683a6b4d0645d3001dd05acf\\transformed\\appcompat-1.8.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\6dd047995336e505c51df7287b94cd36\\transformed\\viewpager2-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\b1b300fbd18f0618a85fc06ea58d8cba\\transformed\\fragment-1.5.4-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\a3fe4fbb9b0925509d53a10ac9628bbe\\transformed\\activity-1.8.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\4f391eb3494f8f700f38221b9bff4893\\transformed\\emoji2-views-helper-1.3.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\90c13839d0e0efb1948ff9a5dd43f141\\transformed\\emoji2-1.3.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\af84c0b5217b15dc9fdb6129b6aa960e\\transformed\\drawerlayout-1.1.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\dfb42a59642f3ad1262ede1f4dba36b4\\transformed\\coordinatorlayout-1.1.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\ab38e1893560ad404e91b1aaea1e39cd\\transformed\\recyclerview-1.2.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\ca8b02e15117a48177c59435272a981c\\transformed\\viewpager-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\db4c740508db67b48c04e82a6b84764b\\transformed\\customview-1.2.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\1cfb1f00465598649ae8d1d4676234ea\\transformed\\transition-1.5.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\de888bbf48c1e22d197daa47f7672618\\transformed\\dynamicanimation-1.1.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\422ac3b5e58d181126a6251d45469bb3\\transformed\\vectordrawable-animated-1.1.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\9b75955d2a482ccbdb0066cc3de99788\\transformed\\vectordrawable-1.1.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\c3b70f2c84f9046a7819867ab7402e59\\transformed\\loader-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\92b1120878a5a72c97816438ccc0546b\\transformed\\graphics-shapes-release-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\9749f9d40f974203448cefd2a4298240\\transformed\\core-ktx-1.16.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\4168779ac49e1c55b2701b29b08f1b5a\\transformed\\core-1.16.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\efb11f945f90ba8560279e76fb37a1e1\\transformed\\lifecycle-viewmodel-2.6.2-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\e0de09be4f2d1ee1395a4ea13cbbea5d\\transformed\\lifecycle-process-2.6.2-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\f4936d61e28706b940484d369a8928d7\\transformed\\lifecycle-livedata-core-2.6.2-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\b08dd68843aa433eb2d8be1f99476216\\transformed\\lifecycle-livedata-2.6.2-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.lifecycle\\lifecycle-common\\2.6.2\\10f354fdb64868baecd67128560c5a0d6312c495\\lifecycle-common-2.6.2.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\7a60b5217ae907f398302aedaef28562\\transformed\\lifecycle-runtime-2.6.2-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\8e2bff47ad823e9a4ec6092695b8bd2f\\transformed\\lifecycle-viewmodel-savedstate-2.6.2-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\01a1056eaa6443b239c188ea0eb679df\\transformed\\savedstate-1.2.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\071aa7416f8d8c3fb5d8a21c9c3514a8\\transformed\\cursoradapter-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\b148bd82d05b44e3f12b8eaa355e9b37\\transformed\\profileinstaller-1.4.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.resourceinspection\\resourceinspection-annotation\\1.0.1\\8c21f8ff5d96d5d52c948707f7e4d6ca6773feef\\resourceinspection-annotation-1.0.1.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\e65344828f41adaf35be93071aec9c1e\\transformed\\cardview-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\86b421c967685cfd0f82c168f3a9b773\\transformed\\versionedparcelable-1.1.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.collection\\collection-jvm\\1.4.2\\bc60b5568a66d765a9fe8e266fd0c6c727e0b50b\\collection-jvm-1.4.2.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\71b4d2243370b4b24231b28791b4ae13\\transformed\\core-runtime-2.2.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.arch.core\\core-common\\2.2.0\\5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3\\core-common-2.2.0.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\8c98eab8d7e39ba1c8afc71ef23ee364\\transformed\\startup-runtime-1.1.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.concurrent\\concurrent-futures\\1.1.0\\50b7fb98350d5f42a4e49704b03278542293ba48\\concurrent-futures-1.1.0.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\c8cd3555ff19b7e87a881216a7ff51e3\\transformed\\tracing-1.2.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\976f6d42fe5ebb07aadc4d9d94a97044\\transformed\\interpolator-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.constraintlayout\\constraintlayout-core\\1.1.1\\f7ab6170b99b9421bd4942846426ff820b552f7d\\constraintlayout-core-1.1.1.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\androidx.annotation\\annotation-jvm\\1.8.1\\b8a16fe526014b7941c1debaccaf9c5153692dbb\\annotation-jvm-1.8.1.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\0870bbfc48bd71b5e8cfb91426d282dc\\transformed\\annotation-experimental-1.4.1-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\ca28ef351ccc8e550a02c4a03ca14f72\\transformed\\core-viewtree-1.0.0-runtime.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-core-jvm\\1.6.4\\2c997cd1c0ef33f3e751d3831929aeff1390cb30\\kotlinx-coroutines-core-jvm-1.6.4.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-android\\1.6.4\\f955fc8b2ad196e2f4429598440e15f7492eeb2b\\kotlinx-coroutines-android-1.6.4.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk8\\1.8.22\\b25c86d47d6b962b9cf0f8c3f320c8a10eea3dd1\\kotlin-stdlib-jdk8-1.8.22.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk7\\1.8.22\\4dabb8248310d833bb6a8b516024a91fd3d275c\\kotlin-stdlib-jdk7-1.8.22.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib\\2.2.10\\30de6faa127a4a012db8e71bf1b9c0a99b1402b2\\kotlin-stdlib-2.2.10.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.hamcrest\\hamcrest-core\\1.3\\42a25dc3219429f0e5d060061f71acb49bf010a0\\hamcrest-core-1.3.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains\\annotations\\13.0\\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\\annotations-13.0.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\org.jspecify\\jspecify\\1.0.0\\7425a601c1c7ec76645a78d22b8c6a627edee507\\jspecify-1.0.0.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\com.google.errorprone\\error_prone_annotations\\2.15.0\\38c8485a652f808c8c149150da4e5c2b0bd17f9a\\error_prone_annotations-2.15.0.jar;C:\\Users\\acer\\.gradle\\caches\\modules-2\\files-2.1\\com.google.guava\\listenablefuture\\1.0\\c949a840a6acbc5268d088e47b04177bf90b3cad\\listenablefuture-1.0.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\a09e5b42e7ec7d69fb5bb72ce8196ae5\\transformed\\material-1.14.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\df5bd0ccfbe52bf2cca06206d12941fb\\transformed\\appcompat-resources-1.8.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\ebc2725fc3c719ff11d80883703972b4\\transformed\\constraintlayout-2.2.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\beaf757ad85764e07fda9efa4df44b30\\transformed\\appcompat-1.8.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\9fc0b8306f80d420cc8b9300e1276d3c\\transformed\\viewpager2-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\7ee976d0cc96cbaf37a51a6a8797d6de\\transformed\\fragment-1.5.4\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\b429d6b07c0c0aa0c556aa604fdca772\\transformed\\activity-1.8.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\1de6e1fb6aefa4d514907a5f6bb7ab41\\transformed\\emoji2-views-helper-1.3.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\311493e76f88cafc06f1437d70c89f05\\transformed\\emoji2-1.3.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\311493e76f88cafc06f1437d70c89f05\\transformed\\emoji2-1.3.0\\jars\\libs\\repackaged.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\0e65c97ea9838dd6d9984e9121851ece\\transformed\\drawerlayout-1.1.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\034e9e5974d796c7d7107433c589724d\\transformed\\coordinatorlayout-1.1.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\4d1234f54c8eb02687701b9995e7ac80\\transformed\\recyclerview-1.2.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\0e561b15393e3dd09089def69a9b1ace\\transformed\\viewpager-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\cd0232305dc54b48fe32bb4b08a8ebd8\\transformed\\customview-1.2.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\cb502e8eb92dedea46e18b9e1dda7b31\\transformed\\transition-1.5.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\235ff056fd7738adbc2d46ca61d1b621\\transformed\\dynamicanimation-1.1.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\1eb79618628959b8d47484d2a48749a1\\transformed\\vectordrawable-animated-1.1.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\318fb12d976d34e0073851233fd6921d\\transformed\\vectordrawable-1.1.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\1c6230f27c799169c3ff7b5424eca2c5\\transformed\\loader-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\a00647c94fd8fcede1be4fb2bac519eb\\transformed\\graphics-shapes-release\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\05db7fd8b1452a6c75c39460ce750fff\\transformed\\core-ktx-1.16.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\251d00668d91f3d6c952939df571fded\\transformed\\core-1.16.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\6d13972aec7c195ad9f73afb98c291be\\transformed\\lifecycle-viewmodel-2.6.2\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\3a2fd800df65aec808cbaf7788321197\\transformed\\lifecycle-process-2.6.2\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\85b38fee4b624ba2fcffb03a1d90a1c4\\transformed\\lifecycle-livedata-core-2.6.2\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\3b13c4ebaed269b4b284be60735c497c\\transformed\\lifecycle-livedata-2.6.2\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\a2df3c36676266697059487c1c9b408f\\transformed\\lifecycle-runtime-2.6.2\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\728bf0d52cc1a3d5f211b5f0e8e97964\\transformed\\lifecycle-viewmodel-savedstate-2.6.2\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\37903f4d2d6fe5cac302b9dc7b1d77b1\\transformed\\savedstate-1.2.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\283fc04f6454c045bace7e7c626fcf3f\\transformed\\cursoradapter-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\89cf0427c7356c26f9627a968568b41d\\transformed\\profileinstaller-1.4.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\9b938c03935ee6bbd9d16cceb107d987\\transformed\\cardview-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\dfaa5aa44885d524e0e4ee55cb9d239e\\transformed\\versionedparcelable-1.1.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\3dcd2a7cb76f01c13d3534ae6e8dd696\\transformed\\core-runtime-2.2.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\52cd81b91433bc8cf74de34cebc49a6c\\transformed\\startup-runtime-1.1.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\6f1f02118e087abaffaffaa441562201\\transformed\\tracing-1.2.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\0578d606c82ee23ce569031f222fa0bc\\transformed\\interpolator-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\d668543a090d135a6c5dd68cc09ae61a\\transformed\\annotation-experimental-1.4.1\\jars\\classes.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\c76cfbd3562e7e61323e82da97b7c38d\\transformed\\core-viewtree-1.0.0\\jars\\classes.jar;C:\\Users\\acer\\StudioProjects\\PointQuest\\app\\build\\intermediates\\compile_and_runtime_r_class_jar\\debug\\processDebugResources\\R.jar;C:\\Users\\acer\\.gradle\\caches\\9.5.0\\transforms\\d7cc0f1fcac13965873af82686987196\\transformed\\android.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 33554432                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 536870912                              {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\acer\AppData\Local\Microsoft\WindowsApps;C:\Users\acer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\acer\AppData\Local\Kingsoft\WPS Office\12.1.0.27458\clitool
+USERNAME=acer
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 55 Stepping 8, GenuineIntel
+TMP=C:\Users\acer\AppData\Local\Temp
+TEMP=C:\Users\acer\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 3 days 20:49 hours
+
+CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 55 stepping 8 microcode 0x838, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, erms, clmul, clflush, rdtscp
+Processor Information for the first 4 processors :
+  Max Mhz: 1827, Current Mhz: 1827, Mhz Limit: 1827
+
+Memory: 4k page, system-wide physical 1929M (59M free)
+TotalPageFile size 7817M (AvailPageFile size 14M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 51M, peak: 83M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.7+6-LTS) for windows-amd64 JRE (21.0.7+6-LTS), built on 2025-04-15T00:00:00Z by "admin" with MS VC++ 17.7 (VS2022)
+
+END.

@@ -2,7 +2,7 @@ package com.example.myapplication.quarter2;
 
 import org.junit.Test;
 
-public class Ty_MiniPeta1{
+public class Ty_MiniPeta2 {
     @Test
     public void printMyProfile() {
 

@@ -4,16 +4,13 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-
-public class Ty_PracticalExam {
+public class FastFoodTest {
     @Test
     public void testFastFoodFlow() {
         StringBuilder automatedInput = new StringBuilder();
-
-
+        
         System.out.println("---GENERATING FAST FOOD TEST DATA---");
-
-        // Step 1: Order Burger as Combo (Nested option 1)
+        // Step 1: Order Burger (Nested option 1)
         automatedInput.append("1\n"); // Choose Order Burger
         automatedInput.append("1\n"); // Choose Combo upgrade
 
@@ -31,5 +28,8 @@ public class Ty_PracticalExam {
 
         ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
         Scanner scanner = new Scanner(inputStream);
+
+            FastFoodTest fastFoodSystem = new FastFoodTest();
+            fastFoodSystem.start(scanner);
     }
 }

@@ -49,6 +49,7 @@ public class FastFoodTest {
             System.out.println("2. Fries");
             System.out.println("3. Exit");
 
+            System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -56,9 +57,8 @@ public class FastFoodTest {
                 case "1":
 
                     System.out.println("You selected Burger.");
-                    System.out.println("1. Combo - 95");
-                    System.out.println("2. Solo - 67");
-
+                    System.out.println("1. Combo - ₱95");
+                    System.out.println("2. Solo - ₱67");
                     String burgerChoice = scanner.nextLine();
 
                     switch (burgerChoice) {
@@ -81,17 +81,18 @@ public class FastFoodTest {
                     break;
 
                 case "2":
-
+                    // Buying fries
                     System.out.println("You selected Fries.");
+                    System.out.println("2. Fries - ₱40");
                     total = total + 40;
                     break;
 
                 case "3":
-
+                    // Exit and price total
                     System.out.println("Exiting Fast Food Menu.");
 
                     System.out.println("\n--- ORDER SUMMARY ---");
-                    System.out.println("Total: " + total);
+                    System.out.println("Total: ₱" + total);
 
                     running = false;
                     break;

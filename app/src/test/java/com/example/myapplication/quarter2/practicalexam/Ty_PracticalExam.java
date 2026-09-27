@@ -13,18 +13,28 @@ public class FastFoodTest {
 
         System.out.println("--- GENERATING FAST FOOD TEST DATA ---");
 
-        // Repeat the ordering process
-        automatedInput.append("1\n"); // choose burger
-        automatedInput.append("1\n"); // choose combo
+        // Step 1: Order Burger as Combo (Nested option 1)
+        automatedInput.append("1\n"); // Choose Order Burger
+        automatedInput.append("1\n"); // Choose Combo upgrade
 
-        automatedInput.append("1\n"); // choose burger
-        automatedInput.append("2\n"); // choose solo
+        // Step 2: Order Burger as Solo (Nested option 2)
+        automatedInput.append("1\n"); // Choose Order Burger
+        automatedInput.append("2\n"); // Choose Solo
 
-        automatedInput.append("2\n"); // choose fries
+        // Step 3: Order Fries option
+        automatedInput.append("2\n"); // Choose Order Fries
 
-        automatedInput.append("3\n"); // choose exit
+        // Step 4: Exit system
+        automatedInput.append("3\n"); // Choose Exit
 
         System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
+
+
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
+        Scanner scanner = new Scanner(inputStream);
+
+        FastFoodTest fastFoodSystem = new FastFoodTest();
+        fastFoodSystem.start(scanner);
 
         boolean running = true;
 
@@ -33,13 +43,50 @@ public class FastFoodTest {
             System.out.println("1. Burger");
             System.out.println("2. Fries");
             System.out.println("3. Exit");
-        }
 
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
-        Scanner scanner = new Scanner(inputStream);
+            String choice = scanner.nextLine();
 
-        FastFoodMenu fastFoodSystem = new FastFoodMenu();
-        fastFoodSystem.start(scanner);
+            switch (choice) {
+
+                case "1":
+                    System.out.println("You selected Burger.");
+
+                    System.out.println("Choose Burger option:");
+                    System.out.println("1. Combo");
+                    System.out.println("2. Solo");
+
+                    String burgerChoice = scanner.nextLine();
+
+                    switch (burgerChoice) {
+
+                        case "1":
+                            System.out.println("You selected Burger Combo.");
+                            break;
+
+                        case "2":
+                            System.out.println("You selected Burger Solo.");
+                            break;
+
+                        default:
+                            System.out.println("Invalid burger option.");
+                            break;
+                    }
+
+                    break;
+
+                case "2":
+                    System.out.println("You selected Fries.");
+                    break;
+
+                case "3":
+                    System.out.println("Exiting Fast Food Menu...");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+                    break;
+            }
 
         }
     }

@@ -31,6 +31,5 @@ public class FastFoodTest {
 
             FastFoodTest fastFoodSystem = new FastFoodTest();
             fastFoodSystem.start(scanner);
-            // pls pa commit na
     }
 }

@@ -1,119 +1,197 @@
 package com.example.myapplication.quarter2.minipeta3;
 
-import java.util.Scanner;
 import org.junit.Test;
 
+import java.util.Scanner;
+
+import static org.junit.Assert.assertEquals;
+
 public class Gullaba_Minipeta3 {
-
-    public static void main(String[] args) {
-        new Gullaba_Minipeta3().Shop();
-    }
-
     @Test
-    public void Shop() {
+    public void testShoplist() {
+        shoplist();
+    }
+    public static void shoplist() {
+
         Scanner scanner = new Scanner (System.in);
+        int shoplist = 100;
         System.out.println("What would you want to buy?");
+
         String confirm = "";
         //categories
-        if (scanner.hasNextLine()) {
+        while (true) {
+            System.out.println("====================================");
+            System.out.println("         broad section(2)           ");
+            System.out.println("====================================");
+            System.out.println("         sweet section(3)           ");
+            System.out.println("====================================");
+            System.out.println("         sour section(4)            ");
+            System.out.println("====================================");
+            System.out.println("         drink section(5)           ");
+            System.out.println("====================================");
+            System.out.println("         healthy section(6)         ");
+            System.out.println("====================================");
+            System.out.println("         dessert section(7)         ");
+            System.out.println("====================================");
             confirm = scanner.nextLine();
-        }
-        System.out.println("====================================");
-        System.out.println("         broad section(2)           ");
-        System.out.println("====================================");
-        System.out.println("         sweet section(3)           ");
-        System.out.println("====================================");
-        System.out.println("         sour section(4)            ");
-        System.out.println("====================================");
-        System.out.println("         drink section(5)           ");
-        System.out.println("====================================");
-        System.out.println("         healthy section(6)         ");
-        System.out.println("====================================");
-        System.out.println("         dessert section(7)         ");
-        System.out.println("====================================");
-        if (scanner.hasNextLine()) {
-            confirm = scanner.nextLine();
-        }
 
-        if (confirm.equalsIgnoreCase("2")) {
-            System.out.println("Welcome to broad section!");
-        } else if (confirm.equalsIgnoreCase("3")) {
-            System.out.println("Welcome to sweet section!");
-        } else if (confirm.equalsIgnoreCase("4")) {
-            System.out.println("Welcome to sour section!");
-        } else if (confirm.equalsIgnoreCase("5")) {
-            System.out.println("Welcome to drink section!");
-        } else if (confirm.equalsIgnoreCase("6")) {
-            System.out.println("Welcome to healthy section!");
-        } else if (confirm.equalsIgnoreCase("7")) {
-            System.out.println("Welcome to dessert section!");
-            if (scanner.hasNextLine()) {
-                confirm = scanner.nextLine();
-            }
-        }
+            switch (confirm) {
+                case "2":
+                    System.out.println("Welcome to broad section!");
 
-        //broad section
-        System.out.println("====================================");
-        System.out.println("              cookie(8)             ");
-        System.out.println("====================================");
-        System.out.println("              bread(9)              ");
-        System.out.println("====================================");
-        System.out.println("              candy(10)             ");
-        System.out.println("====================================");
-        System.out.println("             lemonade(11)           ");
-        System.out.println("====================================");
-        System.out.println("             pillows(12)            ");
-        System.out.println("====================================");
-        System.out.println("              water(13)             ");
-        System.out.println("====================================");
-        if (scanner.hasNextLine()) {
-            confirm = scanner.nextLine();
-        }
-
-
-
-
-        // The availabilty
-        for (int shoplist = 100; shoplist >= 1; shoplist--) {
-            System.out.println("Still available " + shoplist + " left");
-            if (shoplist == 10) {
-                System.out.println("Almost out of stocks");
-            } else if  (shoplist == 1) {
-                System.out.println("Theres only one left.");
-            } else if (shoplist == 0) {
-                System.out.println("You are out of item");
-                System.out.println("Wait for the restocks");
-            } else {
-                System.out.println("Confirm? yes(0) or no(1)");
-
-               if (scanner.hasNextLine()) {
-                confirm = scanner.nextLine();
-            } else {
-                break;
-            }
-
-            // confirmation
-            while (!confirm.equalsIgnoreCase("0") && !confirm.equalsIgnoreCase("1")) {
-                System.out.println("Confirm? (yes(0) or no(1))");
-                if (scanner.hasNextLine()) {
+                    // Broad section
+                    System.out.println("====================================");
+                    System.out.println("              cookie(1)             ");
+                    System.out.println("====================================");
+                    System.out.println("              bread(2)              ");
+                    System.out.println("====================================");
+                    System.out.println("              candy(3)             ");
+                    System.out.println("====================================");
+                    System.out.println("             lemonade(4)           ");
+                    System.out.println("====================================");
+                    System.out.println("             pillows(5)            ");
+                    System.out.println("====================================");
+                    System.out.println("              water(6)             ");
+                    System.out.println("====================================");
                     confirm = scanner.nextLine();
-                } else {
+                    break;
+
+                case "3":
+                    System.out.println("Welcome to sweet section!");
+
+                    //Sweet section
+                    System.out.println("====================================");
+                    System.out.println("    Chocolate Chip Cookies(1)      ");
+                    System.out.println("====================================");
+                    System.out.println("         Gummy bears(2)            ");
+                    System.out.println("====================================");
+                    System.out.println("           Brownies(3)             ");
+                    System.out.println("====================================");
+                    System.out.println("            Lolipop(4)             ");
+                    System.out.println("====================================");
+                    System.out.println("            Macarons(5)            ");
+                    System.out.println("====================================");
+                    System.out.println("              Caramel(6)           ");
+                    System.out.println("====================================");
+                    confirm = scanner.nextLine();
+                    break;
+
+                case "4":
+                    System.out.println("Welcome to sour section!");
+
+                    //Sour section
+                    System.out.println("====================================");
+                    System.out.println("         Sour Patch Kids(1)        ");
+                    System.out.println("====================================");
+                    System.out.println("          Skittles Sour(2)         ");
+                    System.out.println("====================================");
+                    System.out.println("      Warheads Extreme Sour(3)     ");
+                    System.out.println("====================================");
+                    System.out.println("         Sour Punch Straws(4)      ");
+                    System.out.println("====================================");
+                    System.out.println("   Trolli Sour Brite Crawlers(5)   ");
+                    System.out.println("====================================");
+                    System.out.println("          Toxic Waste(6)           ");
+                    System.out.println("====================================");
+                    confirm = scanner.nextLine();
+                    break;
+
+                case "5":
+                    System.out.println("Welcome to drink section!");
+
+                    //Drink section
+                    System.out.println("====================================");
+                    System.out.println("            Lemonade(1)            ");
+                    System.out.println("====================================");
+                    System.out.println("             Water(2)              ");
+                    System.out.println("====================================");
+                    System.out.println("             Coffee(3)             ");
+                    System.out.println("====================================");
+                    System.out.println("              Soda(4)              ");
+                    System.out.println("====================================");
+                    System.out.println("              Milk(5)              ");
+                    System.out.println("====================================");
+                    System.out.println("             Juice(6)              ");
+                    System.out.println("====================================");
+                    confirm = scanner.nextLine();
+                    break;
+
+                case "6":
+                    System.out.println("Welcome to healthy section!");
+
+                    //Healthy section
+                    System.out.println("====================================");
+                    System.out.println("          Quinoa Base(1)           ");
+                    System.out.println("====================================");
+                    System.out.println("     Roasted Sweet Potatoes(2)     ");
+                    System.out.println("====================================");
+                    System.out.println("        Pan-Seared Salmon(3)       ");
+                    System.out.println("====================================");
+                    System.out.println("         Steamed Edamame(4)        ");
+                    System.out.println("====================================");
+                    System.out.println("      ahini Garlic Drizzle(5)      ");
+                    System.out.println("====================================");
+                    System.out.println("              Apple(6)           ");
+                    System.out.println("====================================");
+                    confirm = scanner.nextLine();
+                    break;
+
+                case "7":
+                    System.out.println("Welcome to dessert section!");
+
+                    //Dessert section
+                    System.out.println("====================================");
+                    System.out.println("         Sliced Cakes(1)           ");
+                    System.out.println("====================================");
+                    System.out.println("         Chocolate Cake(2)         ");
+                    System.out.println("====================================");
+                    System.out.println("          Lemon Tart(3)            ");
+                    System.out.println("====================================");
+                    System.out.println("          Dark Chocolate(4)        ");
+                    System.out.println("====================================");
+                    System.out.println("       Mexican Brownies(5)         ");
+                    System.out.println("====================================");
+                    System.out.println("         Berry Sorbet(6)           ");
+                    System.out.println("====================================");
+                    confirm = scanner.nextLine();
+                    break;
+
+                default: System.out.println("Invalid section selected.");
+            }
+            while (true) {
+                System.out.println("\nStill available: " + shoplist + " left");
+
+                if (shoplist == 10) {
+                    System.out.println("Almost out of stocks");
+                } else if (shoplist == 1) {
+                    System.out.println("There's only one left.");
+                } else if (shoplist <= 0) {
+                    System.out.println("You are out of items! Wait for the restocks.");
                     break;
                 }
+
+                System.out.println("Confirm? yes(0), exit(1), or return to sections(2)");
+                confirm = scanner.nextLine();
+
+                // Input validation loop
+                while (!confirm.equals("0") && !confirm.equals("1") && !confirm.equals("2")) {
+                    System.out.println("There's no option for that. Confirm? (yes(0), no(1), or return to sections(2))");
+                    confirm = scanner.nextLine();
                 }
 
-                if (!confirm.equalsIgnoreCase("0") && !confirm.equalsIgnoreCase("1")) {
-                    System.out.println("Theres no option for that.");
+                // Process choice
+                if (confirm.equals("2")) {
+                    System.out.println("Progress saved. Returning to the main sections menu...");
+                    break; // Breaks out of checkout, returning you to the sections loop
+                } else if (confirm.equals("1")) {
+                    System.out.println("Have a nice day!");
+                    return;
+                } else if (confirm.equals("0")) {
+                    System.out.println("Purchase Confirm!");
+                    shoplist--; // Progress saved by subtracting inventory
                 }
             }
-
-            if (confirm.equalsIgnoreCase("1")) {
-                System.out.println("Have a nice day!");
-                break;
-            } else if (confirm.equalsIgnoreCase("0")) {
-                System.out.println("Purchase Confirm");
-            }
-
         }
     }
+
 }

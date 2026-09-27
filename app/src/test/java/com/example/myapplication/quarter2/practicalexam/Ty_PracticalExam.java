@@ -28,7 +28,6 @@ public class FastFoodTest {
 
         ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
         Scanner scanner = new Scanner(inputStream);
-
             FastFoodTest fastFoodSystem = new FastFoodTest();
             fastFoodSystem.start(scanner);
     }

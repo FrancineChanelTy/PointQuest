@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Gullaba_Minipeta3 {
     @Test
-    public void testShoplist() {
+    public void Shoplisttest() {
         shoplist();
     }
     public static void shoplist() {

@@ -65,7 +65,13 @@ public class Silvoza_PracticalExam {
                 case 3:
                     System.out.println("\nThank you for using the Library Kiosk!");
                     running = false;
+
+                    break;
+
+                default:
+                    System.out.println("\nInvalid choice. Please try again.");
             }
         }
     }
 }
+

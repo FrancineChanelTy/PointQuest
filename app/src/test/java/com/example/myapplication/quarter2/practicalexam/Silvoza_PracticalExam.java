@@ -18,6 +18,9 @@ public class Silvoza_PracticalExam {
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
+
+            switch (choice) {
+            }
         }
     }
 }

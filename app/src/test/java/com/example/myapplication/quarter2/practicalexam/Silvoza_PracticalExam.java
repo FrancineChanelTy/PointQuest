@@ -20,6 +20,51 @@ public class Silvoza_PracticalExam {
             int choice = scanner.nextInt();
 
             switch (choice) {
+
+                case 1:
+                    System.out.println("\n--- BORROW BOOK ---");
+
+                    System.out.print("Enter number of books: ");
+                    int books = scanner.nextInt();
+
+                    double feePerBook = 5.00;
+                    double total = books * feePerBook;
+
+                    System.out.println("Books borrowed: " + books);
+                    System.out.println("Total fee: " + total);
+
+                    break;
+
+                case 2:
+                    System.out.println("\n--- PAY FINES ---");
+
+                    double fine = 15.00;
+
+                    System.out.println("Current fine: " + fine);
+                    System.out.print("Enter payment: ");
+
+                    double payment = scanner.nextDouble();
+
+                    if (payment < fine) {
+
+                        double remaining = fine - payment;
+
+                        System.out.println("Insufficient payment.");
+                        System.out.println("Remaining fine: " + remaining);
+
+                    } else {
+
+                        double change = payment - fine;
+
+                        System.out.println("Payment accepted.");
+                        System.out.println("Change: " + change);
+                    }
+
+                    break;
+
+                case 3:
+                    System.out.println("\nThank you for using the Library Kiosk!");
+                    running = false;
             }
         }
     }

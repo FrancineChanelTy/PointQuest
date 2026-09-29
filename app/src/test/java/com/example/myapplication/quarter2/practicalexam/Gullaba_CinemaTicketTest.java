@@ -1,6 +1,6 @@
 package com.example.myapplication.quarter2.practicalexam;
 import java.util.Scanner;
-public class Gullaba_CinemaTicketingTest {
+public class CinemaTicketingTest {
     public void testCinemaFlow() {
         Scanner scanner = new Scanner(System.in);
         // Step 1: Ask the user to choose an option first

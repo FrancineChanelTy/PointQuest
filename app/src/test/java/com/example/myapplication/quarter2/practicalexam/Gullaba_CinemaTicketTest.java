@@ -1,6 +1,8 @@
 package com.example.myapplication.quarter2.practicalexam;
 import java.util.Scanner;
+import org.junit,Test;
 public class CinemaTicketingTest {
+    @Test
     public void testCinemaFlow() {
         Scanner scanner = new Scanner(System.in);
         // Ask the user to choose an option first

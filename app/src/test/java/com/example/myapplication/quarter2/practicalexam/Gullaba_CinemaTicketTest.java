@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class CinemaTicketingTest {
     public void testCinemaFlow() {
         Scanner scanner = new Scanner(System.in);
-        // Step 1: Ask the user to choose an option first
+        // Ask the user to choose an option first
         System.out.println("=== CINEMA MENU ===");
         System.out.println("1. Buy Ticket");
+        System.out.println("2. Snacks"); //step 3
         int ticketChoice = scanner.nextInt();
-        // Only ask for age after Buy Ticket is selected
+        // Only ask for age
         if (ticketChoice == 1) { //step 1
             System.out.print("Enter age: ");
             int age = scanner.nextInt();
@@ -16,8 +17,9 @@ public class CinemaTicketingTest {
             } else { //step 2
                 System.out.println("Ticket Printed")
             }
-        } else {
-            System.out.println("Invalid choice.");
+        } if else {
+            System.out.println("Would you want to buy snack?");
+            if ()
         }
         scanner.close();
     }

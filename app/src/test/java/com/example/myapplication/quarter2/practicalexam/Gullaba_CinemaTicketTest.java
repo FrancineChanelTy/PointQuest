@@ -8,11 +8,13 @@ public class CinemaTicketingTest {
         System.out.println("1. Buy Ticket");
         int ticketChoice = scanner.nextInt();
         // Only ask for age after Buy Ticket is selected
-        if (ticketChoice == 1) { // step 1
+        if (ticketChoice == 1) { //step 1
             System.out.print("Enter age: ");
             int age = scanner.nextInt();
             if (age < 18) {
                 System.out.println("Access Denied");
+            } else { //step 2
+                System.out.println("Ticket Printed")
             }
         } else {
             System.out.println("Invalid choice.");

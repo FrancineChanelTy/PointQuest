@@ -1,15 +1,48 @@
 package com.example.myapplication.quarter2.practicalexam;
 
+import org.junit.Test;
+import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Ty_PracticalExam {
+public class FastFoodTest {
 
-    public void start(Scanner scanner) {
+    @Test
+    public void testFastFoodFlow() {
+
+        StringBuilder automatedInput = new StringBuilder();
+
+        System.out.println("--- GENERATING FAST FOOD TEST DATA ---");
+
+        // Step 1: Order Burger as Combo (Nested option 1)
+        automatedInput.append("1\n"); // Choose Order Burger
+        automatedInput.append("1\n"); // Choose Combo upgrade
+
+        // Step 2: Order Burger as Solo (Nested option 2)
+        automatedInput.append("1\n"); // Choose Order Burger
+        automatedInput.append("2\n"); // Choose Solo
+
+        // Step 3: Order Fries option
+        automatedInput.append("2\n"); // Choose Order Fries
+
+        // Step 4: Exit system
+        automatedInput.append("3\n"); // Choose Exit
+
+        System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
+
+        ByteArrayInputStream inputStream =
+                new ByteArrayInputStream(
+                        automatedInput.toString().getBytes());
+
+        Scanner scanner = new Scanner(inputStream);
+
+        Ty_PracticalExam fastFoodSystem = new Ty_PracticalExam();
+        fastFoodSystem.start(scanner);
 
         double total = 0;
+
         boolean running = true;
 
-        while (running && scanner.hasNextLine()) {
+        while (running) {
 
             System.out.println("\n--- FAST FOOD MENU ---");
             System.out.println("1. Burger");
@@ -23,8 +56,8 @@ public class Ty_PracticalExam {
                 case "1":
 
                     System.out.println("You selected Burger.");
-                    System.out.println("1. Combo - 120");
-                    System.out.println("2. Solo - 80");
+                    System.out.println("1. Combo - 95");
+                    System.out.println("2. Solo - 67");
 
                     String burgerChoice = scanner.nextLine();
 
@@ -32,12 +65,12 @@ public class Ty_PracticalExam {
 
                         case "1":
                             System.out.println("You selected Burger Combo.");
-                            total = total + 120;
+                            total = total + 95;
                             break;
 
                         case "2":
                             System.out.println("You selected Burger Solo.");
-                            total = total + 80;
+                            total = total + 67;
                             break;
 
                         default:
@@ -50,7 +83,7 @@ public class Ty_PracticalExam {
                 case "2":
 
                     System.out.println("You selected Fries.");
-                    total = total + 50;
+                    total = total + 40;
                     break;
 
                 case "3":
@@ -58,13 +91,7 @@ public class Ty_PracticalExam {
                     System.out.println("Exiting Fast Food Menu.");
 
                     System.out.println("\n--- ORDER SUMMARY ---");
-                    System.out.println("Subtotal: " + total);
-
-                    double tax = total * 0.12;
-                    double finalTotal = total + tax;
-
-                    System.out.println("Tax: " + tax);
-                    System.out.println("Total: " + finalTotal);
+                    System.out.println("Total: " + total);
 
                     running = false;
                     break;
@@ -75,5 +102,7 @@ public class Ty_PracticalExam {
                     break;
             }
         }
+
+        scanner.close();
     }
 }

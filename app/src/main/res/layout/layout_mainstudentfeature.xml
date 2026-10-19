@@ -42,7 +42,7 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="225dp"
-        android:layout_height="580dp"
+        android:layout_height="577dp"
         app:srcCompat="@drawable/_753904609_1258579749620855_6198862689724828173_n"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="40dp" />

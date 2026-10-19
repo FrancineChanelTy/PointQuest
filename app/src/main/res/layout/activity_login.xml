@@ -105,6 +105,6 @@
         android:focusable="true"
         android:text="Forgot Password?"
         android:textColor="#2196F3"
-        android:textSize="30dp" />
+        android:textSize="29dp" />
 
 </LinearLayout>

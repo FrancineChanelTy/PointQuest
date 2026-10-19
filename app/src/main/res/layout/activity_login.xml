@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#FFFFFF"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp">
@@ -12,13 +12,12 @@
     <!-- Logo -->
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="App Logo"
-        android:src="logo"
-        tools:srcCompat="@drawable/_753904609_1258579749620855_6198862689724828173_n" />
+        android:src="@drawable/screenshot_2026_10_19_131109_removebg_preview" />
 
     <!-- Title -->
     <TextView

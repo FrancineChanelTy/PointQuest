@@ -4,6 +4,6 @@ public class Gullaba_Minipeta2q3 {
 
     }
 
-    public void SHOPLISTS() {
+    public void shoplist() {
     }
 }

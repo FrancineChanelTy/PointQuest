@@ -11,9 +11,8 @@
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="124dp"
-        android:text="Gym Quest"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="264dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -54,11 +53,15 @@
         android:layout_width="164dp"
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginBottom="750dp"
         android:text="Quests!"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,22 +79,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:layout_width="409dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="528dp"
+        android:id="@+id/searchView"
+        android:layout_width="396dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="169dp"
+        android:layout_marginBottom="688dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="76dp"
-        android:text="Library Quest"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="204dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -101,22 +106,24 @@
         android:layout_width="378dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="640dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="616dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Library Quest: Sort the books for 20 minutes"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <EditText
         android:id="@+id/editTextText3"
         android:layout_width="378dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="476dp"
+        android:layout_marginBottom="556dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Gym Quest: Organize the basketballs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -129,5 +136,33 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/_753904609_1258579749620855_6198862689724828173_n" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/abstract_black_plus_symbol_on_transparent_background_for_design_use_free_png"
+        tools:layout_editor_absoluteY="-275dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="512dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="330dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abstract_black_plus_symbol_on_transparent_background_for_design_use_free_png" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

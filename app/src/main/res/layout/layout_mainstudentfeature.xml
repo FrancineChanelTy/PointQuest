@@ -46,7 +46,8 @@
         android:layout_height="580dp"
         app:srcCompat="@drawable/_753904609_1258579749620855_6198862689724828173_n"
         tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="40dp" />
+        tools:layout_editor_absoluteY="40dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button10"
@@ -55,8 +56,8 @@
         android:text="WELCOME TO POINTQUEST"
         android:backgroundTint="@color/grey"
         tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="494dp" />
+        tools:layout_editor_absoluteY="494dp"
+        tools:ignore="MissingConstraints" />
 
-    <Find
 
 </androidx.constraintlayout.widget.ConstraintLayout>

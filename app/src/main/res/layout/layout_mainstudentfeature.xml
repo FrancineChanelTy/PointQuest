@@ -16,7 +16,8 @@
         android:text="QUEST"
         android:backgroundTint="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button7"
@@ -27,7 +28,8 @@
         android:text="LOGOUT"
         android:backgroundTint="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button8"
@@ -38,7 +40,8 @@
         android:text="SHOPLIST"
         android:backgroundTint="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,7 +49,8 @@
         android:layout_height="580dp"
         app:srcCompat="@drawable/_753904609_1258579749620855_6198862689724828173_n"
         tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="40dp" />
+        tools:layout_editor_absoluteY="40dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
         android:id="@+id/button10"
@@ -55,8 +59,8 @@
         android:text="WELCOME TO POINTQUEST"
         android:backgroundTint="@color/grey"
         tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="494dp" />
+        tools:layout_editor_absoluteY="494dp"
+        tools:ignore="HardcodedText,MissingConstraints,VisualLintButtonSize,VisualLintBounds" />
 
-    <Find
 
 </androidx.constraintlayout.widget.ConstraintLayout>

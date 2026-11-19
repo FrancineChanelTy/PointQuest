@@ -24,7 +24,7 @@ public class Ty_MiniPeta2q3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ty_mainfeature_student);
 
-        // connect the xml
+        // initialize
         questContainer = findViewById(R.id.questContainer);
         todoContainer = findViewById(R.id.todoContainer);
 
@@ -62,8 +62,8 @@ public class Ty_MiniPeta2q3 extends AppCompatActivity {
             JSONArray quests = new JSONArray(data);
 
             if (quests.length() == 0) {
-                addMessage(questContainer, "no quests available");
-                addMessage(todoContainer, "no tasks available");
+                addMessage(questContainer, "no quests available!");
+                addMessage(todoContainer, "no tasks available!");
                 return;
             }
 
@@ -87,12 +87,12 @@ public class Ty_MiniPeta2q3 extends AppCompatActivity {
             }
 
             if (!hasOngoing) {
-                addMessage(todoContainer, "no ongoing quests");
+                addMessage(todoContainer, "no ongoing quests!");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            addMessage(questContainer, "error loading quests");
+            addMessage(questContainer, "error loading quests...");
         }
     }
 
@@ -110,7 +110,7 @@ public class Ty_MiniPeta2q3 extends AppCompatActivity {
         container.addView(text);
     }
 
-    // add message
+    // ad message
     private void addMessage(LinearLayout container, String message) {
 
         TextView text = new TextView(this);
